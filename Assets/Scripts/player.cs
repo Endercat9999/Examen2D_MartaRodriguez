@@ -23,30 +23,30 @@ public class player : MonoBehaviour
 
             if(Input.GetButtonDown("Jump") && GroundSensor.isGrounded)
             {
-            Jump();
+                Jump();
             }     
         }
     void Movement()
     {
-        if(inputHorizontal < 0)
-                {
-                    transform.rotation = Quaternion.Euler(0, 100, 0);
-                    anim.SetBool("IsRunning", true);
-                }
-                else if (inputHorizontal > 0)
-                {
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
-                    anim.SetBool("IsRunning", true);
-                }
-                else
-                {
-                anim.SetBool("IsRunning", false);  
-                }
+        if(horizontalInput < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 100, 0);
+            characterAnimator.SetBool("IsRunning", true);
+        }
+        else if (horizontalInput > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            characterAnimator.SetBool("IsRunning", true);
+        }
+        else
+        {
+            characterAnimator.SetBool("IsRunning", false);  
+        }
     }
 
     void Jump()
         {
-    characterRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            characterRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             characterAnimator.SetBool("isjumping", true);
         }
 

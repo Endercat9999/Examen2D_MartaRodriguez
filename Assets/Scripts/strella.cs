@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 public class strella : MonoBehaviour
 {
    
-private bool interectable;
-           void Update()
+    private bool interectable;
+    void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && interectable)
         {
-SceneManager.LoadScene("Victoria");
-         }
+            SceneManager.LoadScene("Victoria");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)

@@ -5,11 +5,11 @@ using UnityEngine;
 public class coin : MonoBehaviour
 {
     private bool interectable;
-           void Update()
+    
+    void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && interectable)
         {
-            GameManager.instance.AddCoin();
             Destroy(gameObject);
         }
     }
