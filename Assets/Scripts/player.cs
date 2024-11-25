@@ -10,22 +10,23 @@ public class player : MonoBehaviour
     private float horizontalInput;
    [SerializeField]private float characterSpeed = 4.5f;
    [SerializeField]private float jumpForce = 8;
+   
     void Awake()
-        {
-            characterRigidbody = GetComponent<Rigidbody2D>();
-            characterAnimator = GetComponent <Animator>();
-        }
+    {
+        characterRigidbody = GetComponent<Rigidbody2D>();
+        characterAnimator = GetComponent <Animator>();
+    }
 
 
     void Update()
-        {
-            Movement();
+    {
+        Movement();
 
-            if(Input.GetButtonDown("Jump") && GroundSensor.isGrounded)
-            {
-                Jump();
-            }     
-        }
+        if(Input.GetButtonDown("Jump") && GroundSensor.isGrounded)
+        {
+            Jump();
+        }     
+    }
     void Movement()
     {
         if(horizontalInput < 0)
@@ -45,10 +46,10 @@ public class player : MonoBehaviour
     }
 
     void Jump()
-        {
-            characterRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            characterAnimator.SetBool("isjumping", true);
-        }
+    {
+        characterRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        characterAnimator.SetBool("isjumping", true);
+    }
 
 
 }
